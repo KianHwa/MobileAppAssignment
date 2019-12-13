@@ -3,25 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/home">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/home"
+        android:id="@+id/homeFragment"
         android:name="com.example.mobileappassignment.home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/group"
+        android:id="@+id/groupFragment"
         android:name="com.example.mobileappassignment.group"
         android:label="fragment_group"
         tools:layout="@layout/fragment_group" />
     <fragment
-        android:id="@+id/setting"
+        android:id="@+id/settingFragment"
         android:name="com.example.mobileappassignment.setting"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
     <fragment
-        android:id="@+id/myprofile"
+        android:id="@+id/profileFragment"
         android:name="com.example.mobileappassignment.myprofile"
         android:label="fragment_myprofile"
         tools:layout="@layout/fragment_myprofile" />
