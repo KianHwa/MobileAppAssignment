@@ -14,7 +14,11 @@
         android:id="@+id/groupFragment"
         android:name="com.example.mobileappassignment.group"
         android:label="fragment_group"
-        tools:layout="@layout/fragment_group" />
+        tools:layout="@layout/fragment_group" >
+        <action
+            android:id="@+id/action_groupFragment_to_forumgroup"
+            app:destination="@id/forumgroup" />
+    </fragment>
     <fragment
         android:id="@+id/settingFragment"
         android:name="com.example.mobileappassignment.setting"
@@ -25,4 +29,21 @@
         android:name="com.example.mobileappassignment.myprofile"
         android:label="fragment_myprofile"
         tools:layout="@layout/fragment_myprofile" />
+    <fragment
+        android:id="@+id/addPostFragment"
+        android:name="com.example.mobileappassignment.AddPost"
+        android:label="fragment_add_post"
+        tools:layout="@layout/fragment_add_post" />
+    <fragment
+        android:id="@+id/forumgroup"
+        android:name="com.example.mobileappassignment.forumgroup"
+        android:label="forumgroup" >
+        <action
+            android:id="@+id/action_forumgroup_to_addPostFragment"
+            app:destination="@id/addPostFragment" />
+        <argument
+            android:name="groupCat"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
 </navigation>

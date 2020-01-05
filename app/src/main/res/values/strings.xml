@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">MobileAppAssignment</string>
-
+    <string name="in_news">Testing only Testing only Testing only Testing only Testing only</string>
     <string name="user_name">Guest</string>
 
     <string name="my_profile">My Profile</string>
     <string name="home">Home</string>
     <string name="group">Groups</string>
     <string name="setting">Setting</string>
+
+    <string-array name="sports_array">
+        <item>Shuttle Badminton</item>
+        <item>Tennis</item>
+        <item>FootBall</item>
+        <item>Basket Ball</item>
+        <item>Table Tennis</item>
+        <item>Chess</item>
+        <item>Hockey</item>
+    </string-array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
