@@ -1,4 +1,4 @@
-package com.example.mobileappassignment
+package com.example.mobileappassignment.Fragments
 
 
 import android.os.Bundle
@@ -7,27 +7,26 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import androidx.core.os.bundleOf
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mobileappassignment.Activity.GroupList
+import com.example.mobileappassignment.Adapter.GroupAdapter
 import com.example.mobileappassignment.Classes.Group
+import com.example.mobileappassignment.R
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.fragment_forumgroup.*
-import kotlinx.android.synthetic.main.fragment_group.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class group : Fragment(){
+class groupFrag : Fragment(){
     private lateinit var dbReference: DatabaseReference
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
 
     ): View? {
+        val activity = activity as GroupList
+
         val view = inflater.inflate(R.layout.fragment_group, container, false)
         var text = "";
 
@@ -37,7 +36,7 @@ class group : Fragment(){
         recyclerView.layoutManager = linearLayout
 
         val grouplist = arrayListOf<Group>()
-        val adapter = GroupAdapter(grouplist)
+        val adapter = GroupAdapter(grouplist, activity)
         recyclerView.adapter = adapter
 
         dbReference = FirebaseDatabase.getInstance().reference
@@ -65,15 +64,6 @@ class group : Fragment(){
         })
 
 
-
-
-
-
-        val goBtn: View = view.findViewById(R.id.button)
-        goBtn.setOnClickListener { view ->
-            var bundle = bundleOf("value" to grouplist[0].groupID)
-            view.findNavController().navigate(R.id.action_groupFragment_to_forumgroup,bundle)
-}
         return view;
     }
 

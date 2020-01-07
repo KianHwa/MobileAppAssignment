@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.mobileappassignment.home"
+        android:name="com.example.mobileappassignment.Fragments.home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/groupFragment"
-        android:name="com.example.mobileappassignment.group"
+        android:name="com.example.mobileappassignment.Fragments.groupFrag"
         android:label="fragment_group"
         tools:layout="@layout/fragment_group" >
         <action
@@ -21,22 +21,22 @@
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
-        android:name="com.example.mobileappassignment.setting"
+        android:name="com.example.mobileappassignment.Fragments.setting"
         android:label="fragment_setting"
         tools:layout="@layout/fragment_setting" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.mobileappassignment.myprofile"
+        android:name="com.example.mobileappassignment.Fragments.myprofile"
         android:label="fragment_myprofile"
         tools:layout="@layout/fragment_myprofile" />
     <fragment
         android:id="@+id/addPostFragment"
-        android:name="com.example.mobileappassignment.AddPost"
+        android:name="com.example.mobileappassignment.Fragments.AddPost"
         android:label="fragment_add_post"
         tools:layout="@layout/fragment_add_post" />
     <fragment
         android:id="@+id/forumgroup"
-        android:name="com.example.mobileappassignment.forumgroup"
+        android:name="com.example.mobileappassignment.Fragments.forumgroup"
         android:label="forumgroup" >
         <action
             android:id="@+id/action_forumgroup_to_addPostFragment"
