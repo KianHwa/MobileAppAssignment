@@ -25,4 +25,9 @@
         android:name="com.example.mobileappassignment.myprofile"
         android:label="fragment_myprofile"
         tools:layout="@layout/fragment_myprofile" />
+    <fragment
+        android:id="@+id/logout"
+        android:name="com.example.mobileappassignment.logout"
+        android:label="fragment_logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>
