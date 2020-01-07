@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.mobileappassignment.Activity.GroupList
 import com.example.mobileappassignment.Adapter.GroupAdapter
 import com.example.mobileappassignment.Classes.Group
+import com.example.mobileappassignment.MainActivity
 import com.example.mobileappassignment.R
 import com.google.firebase.database.*
 
@@ -25,7 +26,7 @@ class groupFrag : Fragment(){
         savedInstanceState: Bundle?
 
     ): View? {
-        val activity = activity as GroupList
+        val activity = activity as MainActivity
 
         val view = inflater.inflate(R.layout.fragment_group, container, false)
         var text = "";

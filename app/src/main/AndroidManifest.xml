@@ -14,8 +14,8 @@
         </activity>
         <activity android:name=".Activity.Forum" />
         <activity
-            android:name=".Activity.GroupList"
-            android:parentActivityName=".Activity.GroupList">
+            android:name=".MainActivity"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

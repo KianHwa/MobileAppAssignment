@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        actionBar!!.setDisplayHomeAsUpEnabled(false)
+        actionBar?.setDisplayHomeAsUpEnabled(false)
 
         firebase = FirebaseDatabase.getInstance().reference
 
