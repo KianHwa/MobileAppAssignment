@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.mobileappassignment.Classes.ForumPost
 import com.example.mobileappassignment.R
 import com.google.firebase.database.*
@@ -32,6 +33,9 @@ class AddPost : Fragment() {
             val id = mDbReference.child("forumposts").push().key as String
             val forumPost = ForumPost(postID = id, groupID = groupID.toString(), title = title, details = detail)
             mDbReference.child("forumposts").child(id).setValue(forumPost)
+
+            Toast.makeText(context,"Successfully posted on group",
+                Toast.LENGTH_SHORT).show()
         }
 
         return view

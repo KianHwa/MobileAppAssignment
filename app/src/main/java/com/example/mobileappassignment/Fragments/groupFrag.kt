@@ -7,9 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.mobileappassignment.Activity.GroupList
 import com.example.mobileappassignment.Adapter.GroupAdapter
 import com.example.mobileappassignment.Classes.Group
 import com.example.mobileappassignment.MainActivity
@@ -52,6 +52,7 @@ class groupFrag : Fragment(){
                                 groupName = group.groupName,
                                 groupDescription = group.groupDescription,
                                 peopleJoined = 0
+
                             )
                         )
                 }
@@ -63,6 +64,12 @@ class groupFrag : Fragment(){
                 Log.e("ERROR","ERROR")
             }
         })
+
+
+        val createGroupButton: View = view.findViewById(R.id.btnCreateGroup)
+        createGroupButton.setOnClickListener { view ->
+            findNavController().navigate(R.id.action_groupFragment_to_createGroup)
+        }
 
 
         return view;

@@ -43,29 +43,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*public fun addNewPost(view: View){
-        val title = etPostTitle.text.toString()
-        val detail = etPostDetails.text.toString()
-
-
-        val id = firebase.child("forumposts").push().key as String
-        val forumPost = ForumPost(postID = id, title = title, details = detail)
-        firebase.child("forumposts").child(id).setValue(forumPost)
-
-    }*/
-
-    public fun addGroup(view: View){
-        val grpname : String = etGroupName.text.toString()
-        val grpdesc : String = etGroupDesc.text.toString()
-
-        val id = firebase.child("groups").push().key as String
-        val grouplist = Group(groupID = id, groupName = grpname, groupDescription = grpdesc)
-        firebase.child("groups").child(id).setValue(grouplist)
-
-
-
-    }
-
     override fun onSupportNavigateUp(): Boolean {
         val navController = this.findNavController(R.id.myNavHostFragment)
         return NavigationUI.navigateUp(navController, drawerLayout)

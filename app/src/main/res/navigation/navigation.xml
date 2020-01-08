@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_groupFragment_to_forumgroup"
             app:destination="@id/forumgroup" />
+        <action
+            android:id="@+id/action_groupFragment_to_createGroup"
+            app:destination="@id/createGroup" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
@@ -46,4 +49,9 @@
             app:argType="string"
             android:defaultValue="default" />
     </fragment>
+    <fragment
+        android:id="@+id/createGroup"
+        android:name="com.example.mobileappassignment.Fragments.createGroup"
+        android:label="fragment_create_group"
+        tools:layout="@layout/fragment_create_group" />
 </navigation>

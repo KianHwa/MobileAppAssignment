@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.fragment_add_post.*
 class AddPost : AppCompatActivity() {
     private lateinit var mDbReference: DatabaseReference
     public lateinit var groupID : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_post)

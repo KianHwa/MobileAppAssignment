@@ -9,9 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.AddPost">
-
-        </activity>
+        <activity android:name=".Activity.CommentList"></activity>
+        <activity android:name=".Activity.AddPost"></activity>
         <activity android:name=".Activity.Forum" />
         <activity
             android:name=".MainActivity"

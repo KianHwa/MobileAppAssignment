@@ -8,8 +8,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobileappassignment.Activity.AddPost
@@ -41,11 +39,9 @@ class forumgroup : Fragment(){
         recyclerView.layoutManager = linearLayout
 
         val forumlist = arrayListOf<ForumPost>()
-        val adapter = PostAdapter(forumlist)
+        val adapter = PostAdapter(forumlist,activity)
         recyclerView.adapter = adapter
         //===================================================================
-
-        //val grouplist = arrayListOf<Group>()
 
 
         dbReference = FirebaseDatabase.getInstance().reference
@@ -74,30 +70,6 @@ class forumgroup : Fragment(){
             }
         })
 
-
-        //=============================================
-        /*dbReference = FirebaseDatabase.getInstance().reference
-        dbReference.child("groups").addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(p0: DataSnapshot) {
-                val forum = forumlist.clear() // Empty the list
-                for(data in p0.children){
-                    val forum = data.getValue(ForumPost::class.java) as ForumPost
-
-                    forumlist.add(
-                        ForumPost(
-                            title = forum.title,
-                            details = forum.details,
-                            likes = 0
-                        )
-                    )
-                }
-                adapter.notifyDataSetChanged()
-            }
-            override fun onCancelled(p0: DatabaseError) {
-                Log.e("ERROR","ERROR")
-            }
-        })
-*/
 
         val addPostButton: View = view.findViewById(R.id.addPost)
         addPostButton.setOnClickListener { view ->
