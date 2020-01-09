@@ -15,7 +15,15 @@
         android:icon="@drawable/group"
         android:title="@string/group" />
     <item
-        android:id="@+id/settingFragment"
-        android:icon="@drawable/setting"
-        android:title="@string/setting" />
+    android:id="@+id/settingFragment"
+    android:icon="@drawable/setting"
+    android:title="@string/setting" />
+
+    <item
+        android:id="@+id/loginFragment"
+        android:title="@string/login" />
+
+    <item
+        android:id="@+id/registerFragment"
+        android:title="@string/register" />
 </menu>
