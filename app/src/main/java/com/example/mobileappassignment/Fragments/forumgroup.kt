@@ -8,12 +8,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mobileappassignment.Activity.AddPost
 import com.example.mobileappassignment.Activity.Forum
 import com.example.mobileappassignment.Adapter.PostAdapter
 import com.example.mobileappassignment.Classes.ForumPost
+import com.example.mobileappassignment.Classes.Group
 import com.example.mobileappassignment.R
 import com.google.firebase.database.*
 
@@ -29,7 +31,8 @@ class forumgroup : Fragment(){
     ): View? {
         // Get activity
         val activity = activity as Forum
-        val groupID : String = activity.groupId
+        val group : Group = activity.group
+        activity.supportActionBar?.setTitle(group.groupName)
 
         val view =  inflater.inflate(R.layout.fragment_forumgroup, container, false)
 
@@ -50,7 +53,7 @@ class forumgroup : Fragment(){
                 val forum = forumlist.clear() // Empty the list
                 for(data in p0.children){
                     val forum = data.getValue(ForumPost::class.java) as ForumPost
-                    if(forum.groupID.equals(groupID)) {
+                    if(forum.groupID.equals(group.groupID)) {
                         forumlist.add(
                             ForumPost(
                                 title = forum.title,
@@ -70,12 +73,17 @@ class forumgroup : Fragment(){
             }
         })
 
+        val groupname = view.findViewById(R.id.groupNameView) as TextView
+        val groupdetails = view.findViewById(R.id.groupDetailsView) as TextView
+
+        groupname.text = group.groupName
+        groupdetails.text = group.groupDescription
 
         val addPostButton: View = view.findViewById(R.id.addPost)
         addPostButton.setOnClickListener { view ->
 
             val intent = Intent(activity, AddPost::class.java)
-            intent.putExtra("groupId", groupID)
+            intent.putExtra("groupId", group.groupID)
             startActivity(intent)
 
             /*var bundle = bundleOf("value" to groupID)

@@ -27,6 +27,7 @@ class groupFrag : Fragment(){
 
     ): View? {
         val activity = activity as MainActivity
+        activity.supportActionBar?.setTitle("Groups")
 
         val view = inflater.inflate(R.layout.fragment_group, container, false)
         var text = "";

@@ -19,7 +19,7 @@ class GroupAdapter(val array : ArrayList<Group>, val context : Context) : Recycl
         holder?.groupName.text = grouplist.groupName
         holder?.cardView.setOnClickListener{
             val intent = Intent(context, Forum::class.java)
-            intent.putExtra("groupId", grouplist.groupID)
+            intent.putExtra("group", grouplist)
             context.startActivity(intent)
         }
     }

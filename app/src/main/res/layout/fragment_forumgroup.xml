@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
+
         >
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -22,6 +23,7 @@
             app:title="@string/app_name"
             >
 
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
@@ -31,13 +33,35 @@
                 app:layout_collapseParallaxMultiplier="0.5"
                 />
 
-            <!--<androidx.appcompat.widget.Toolbar
-                android:id="@+id/AppBar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:navigationIcon="?attr/homeAsUpIndicator"
-                />-->
+                <LinearLayout
+                    android:padding="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|left"
+                    android:background="@color/transblack"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/groupNameView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="16dp"
+                        android:text="Google"
+                        android:textSize="32dp"
+                        />
+
+                    <TextView
+                        android:textColor="@color/white"
+                        android:id="@+id/groupDetailsView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Google.com"
+                        android:paddingLeft="16dp"
+                        android:textSize="16dp"/>
+                </LinearLayout>
+
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>

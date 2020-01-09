@@ -3,7 +3,9 @@ package com.example.mobileappassignment.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.Window
 import android.widget.Button
+import android.widget.Toast
 import com.example.mobileappassignment.Classes.ForumPost
 import com.example.mobileappassignment.Fragments.AddPost
 import com.example.mobileappassignment.R
@@ -17,7 +19,10 @@ class AddPost : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.getSupportActionBar()?.hide();
         setContentView(R.layout.activity_add_post)
+
+
 
         groupID = intent.getSerializableExtra("groupId") as String
         mDbReference = FirebaseDatabase.getInstance().reference
@@ -31,6 +36,11 @@ class AddPost : AppCompatActivity() {
             val id = mDbReference.child("forumposts").push().key as String
             val forumPost = ForumPost(postID = id, groupID = groupID.toString(), title = title, details = detail)
             mDbReference.child("forumposts").child(id).setValue(forumPost)
+
+            Toast.makeText(this,"Successfully posted on group",
+                Toast.LENGTH_LONG).show()
+            
+            finish()
         }
 
     }

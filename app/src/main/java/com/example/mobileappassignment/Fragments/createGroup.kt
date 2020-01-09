@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mobileappassignment.Classes.Group
 import com.example.mobileappassignment.R
 import com.google.firebase.database.*
@@ -18,6 +19,7 @@ class createGroup : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_create_group, container, false)
+        (activity as AppCompatActivity).supportActionBar?.title = "Create Group"
 
         mDbReference = FirebaseDatabase.getInstance().reference
 
@@ -31,7 +33,7 @@ class createGroup : Fragment() {
             mDbReference.child("groups").child(id).setValue(grouplist)
 
             Toast.makeText(context,"Successfully created a group",
-                Toast.LENGTH_SHORT).show()
+                Toast.LENGTH_LONG).show()
         }
 
         return view

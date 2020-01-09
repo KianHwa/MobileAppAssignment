@@ -21,6 +21,7 @@ class CommentList : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        this.getSupportActionBar()?.hide();
         setContentView(R.layout.activity_comment)
 
         postID = intent.getSerializableExtra("postid") as String
@@ -70,7 +71,7 @@ class CommentList : AppCompatActivity() {
             mDbReference.child("comments").child(id).setValue(comment)
 
             Toast.makeText(this, "You commented on the post",
-                Toast.LENGTH_SHORT).show()
+                Toast.LENGTH_LONG).show()
 
         }
 
