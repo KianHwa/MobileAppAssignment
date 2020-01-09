@@ -1,12 +1,5 @@
 package com.example.mobileappassignment.Adapter
 
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
-import androidx.recyclerview.widget.RecyclerView
-import com.example.mobileappassignment.Classes.User
-import com.example.mobileappassignment.R
 /*
 class HomeAdapter(val array : ArrayList<User>) : RecyclerView.Adapter<HomeAdapter.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

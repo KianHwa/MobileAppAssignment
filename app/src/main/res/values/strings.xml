@@ -9,6 +9,14 @@
     <string name="setting">Setting</string>
     <string name="logout">Log Out</string>
 
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="e_mail">Email</string>
+    <string name="swipe_right_for_login">Swipe Right for Login</string>
+    <string name="register">Register</string>
+    <string name="re_type_password">Re-type Password</string>
+    <string name="your_name">Full Name</string>
+
     <string-array name="sports_array">
         <item>Shuttle Badminton</item>
         <item>Tennis</item>

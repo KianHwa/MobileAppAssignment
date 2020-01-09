@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@+id/login">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -14,7 +14,7 @@
         android:id="@+id/groupFragment"
         android:name="com.example.mobileappassignment.Fragments.groupFrag"
         android:label="fragment_group"
-        tools:layout="@layout/fragment_group" >
+        tools:layout="@layout/fragment_group">
         <action
             android:id="@+id/action_groupFragment_to_forumgroup"
             app:destination="@id/forumgroup" />
@@ -37,13 +37,67 @@
     <fragment
         android:id="@+id/forumgroup"
         android:name="com.example.mobileappassignment.Fragments.forumgroup"
-        android:label="forumgroup" >
+        android:label="forumgroup">
         <action
             android:id="@+id/action_forumgroup_to_addPostFragment"
             app:destination="@id/addPostFragment" />
         <argument
             android:name="groupCat"
-            app:argType="string"
-            android:defaultValue="default" />
+            android:defaultValue="default"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.mobileappassignment.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register" />
+        <action
+            android:id="@+id/action_login_to_verifyuser"
+            app:destination="@id/verifyuser" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.mobileappassignment.register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_securityquestion"
+            app:destination="@id/securityquestion" />
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/resetpassword"
+        android:name="com.example.mobileappassignment.resetpassword"
+        android:label="fragment_resetpassword"
+        tools:layout="@layout/fragment_resetpassword">
+        <action
+            android:id="@+id/action_resetpassword_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/securityquestion"
+        android:name="com.example.mobileappassignment.securityquestion"
+        android:label="fragment_securityquestion"
+        tools:layout="@layout/fragment_securityquestion">
+        <action
+            android:id="@+id/action_securityquestion_to_login"
+            app:destination="@id/login" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyuser"
+        android:name="com.example.mobileappassignment.verifyuser"
+        android:label="fragment_verifyuser"
+        tools:layout="@layout/fragment_verifyuser">
+        <action
+            android:id="@+id/action_verifyuser_to_resetpassword"
+            app:destination="@id/resetpassword" />
     </fragment>
 </navigation>
