@@ -62,9 +62,7 @@ class forumgroup : Fragment(){
                             )
                         )
                     }
-
                 }
-
                 adapter.notifyDataSetChanged()
             }
 
@@ -73,11 +71,35 @@ class forumgroup : Fragment(){
             }
         })
 
+        //Get people join
+        var numOfPeople = 0
+        val grouppeople = view.findViewById(R.id.peopleJoinedView) as TextView
+        val ref = dbReference.child("groups").child(group.groupID).child("people")
+        ref.addValueEventListener(object : ValueEventListener{
+            override fun onCancelled(p0: DatabaseError) {
+                Log.e("No people joined","No people joined")
+            }
+
+            override fun onDataChange(snapshot : DataSnapshot){
+                Log.d("No people joined","Inside snapshot")
+                for(data in snapshot.children){
+                    Log.d("No people joined","Inside loop")
+                    numOfPeople++
+                    grouppeople.text = "People Joined : " + numOfPeople.toString()
+                }
+            }
+        })
+        Log.d("No people joined","Answer")
+        Log.d("No people joined",numOfPeople.toString())
+
+        //==================================================================================
         val groupname = view.findViewById(R.id.groupNameView) as TextView
         val groupdetails = view.findViewById(R.id.groupDetailsView) as TextView
 
+
         groupname.text = group.groupName
         groupdetails.text = group.groupDescription
+
 
         val addPostButton: View = view.findViewById(R.id.addPost)
         addPostButton.setOnClickListener { view ->
@@ -89,6 +111,15 @@ class forumgroup : Fragment(){
             /*var bundle = bundleOf("value" to groupID)
             view.findNavController().navigate(R.id.action_forumgroup_to_addPostFragment, bundle)*/
         }
+
+        val joinButton: View = view.findViewById(R.id.floatJoin)
+        joinButton.setOnClickListener{
+            //-Ly8HgpNXr_n6dM1yOnR
+
+            dbReference.child("groups").child(group.groupID).child("people").child("-Ly8HgpNXr_n6dM1yOnR").setValue("-Ly8HgpNXr_n6dM1yOnR")
+            dbReference.child("users").child("-Ly8HgpNXr_n6dM1yOnR").child("groupjoin").child(group.groupID).setValue(group.groupID)
+        }
+
 
         return view
     }

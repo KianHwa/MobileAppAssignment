@@ -44,12 +44,23 @@
                     <TextView
                         android:textColor="@color/white"
                         android:id="@+id/groupNameView"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:text="Google"
                         android:textSize="32dp"
                         />
+
+                    <TextView
+                        android:text="People Joined: "
+                        android:textSize="12dp"
+                        android:textColor="@color/white"
+                        android:id="@+id/peopleJoinedView"
+                        android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <TextView
                         android:textColor="@color/white"
@@ -58,6 +69,7 @@
                         android:layout_height="wrap_content"
                         android:text="Google.com"
                         android:paddingLeft="16dp"
+                        android:paddingRight="16dp"
                         android:textSize="16dp"/>
                 </LinearLayout>
 
@@ -68,6 +80,7 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatJoin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/ic_group"

@@ -8,12 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="LightTheme" parent="Theme.AppCompat.Light">
-
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
-
-    <style name="DarkTheme" parent="Theme.AppCompat.DayNight"></style>
-
-
 
 </resources>

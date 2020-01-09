@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/login">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -32,6 +32,32 @@
         android:name="com.example.mobileappassignment.Fragments.myprofile"
         android:label="fragment_myprofile"
         tools:layout="@layout/fragment_myprofile" />
+    <fragment
+        android:id="@+id/login"
+        android:name="com.example.mobileappassignment.login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/register" />
+    </fragment>
+    <fragment
+        android:id="@+id/register"
+        android:name="com.example.mobileappassignment.register"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_register_to_securityquestion"
+            app:destination="@id/securityquestion" />
+    </fragment>
+    <fragment
+        android:id="@+id/securityquestion"
+        android:name="com.example.mobileappassignment.securityquestion"
+        android:label="fragment_securityquestion"
+        tools:layout="@layout/fragment_securityquestion" />
     <fragment
         android:id="@+id/addPostFragment"
         android:name="com.example.mobileappassignment.Fragments.AddPost"
